@@ -1,24 +1,28 @@
-import React, { useContext } from 'react';
-import { DataContext } from '../Context/DataContext';
+import React, { useContext } from "react";
+import { DataContext } from "../Context/DataContext";
 
-const Products = () => {
-  const productos = useContext(DataContext);
+const Product = () => {
+  const products = useContext(DataContext);
+
   return (
     <div>
-      {Array.isArray(productos) ? productos.map((producto) => (
-        <div key={producto.id}>
-          <h2>{producto.name}</h2>
-          <p>{producto.description}</p>
-          <img
-            className="card-img-top"
-            src={producto.thumbnail}
-            alt={producto.title}
-          />
+      {products.map((product) => (
+        <div key={product.id}>
+          <h2>{product.title}</h2>
+          <img src={product.thumbnail} alt={product.title} />
+          <p>{product.description}</p>
+          <button onClick={() => abrirProducto(product.id)}>ABRIR PRODUCTO</button>
         </div>
-      )) : null}
+      ))}
     </div>
   );
 };
 
-export default Products;
+const abrirProducto = (id) => {
+  console.log("Soy el producto", id);
+};  
+
+export default Product;
+
+
 
