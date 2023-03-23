@@ -6,7 +6,7 @@ const Home = () => {
     <>
       <Navbar />
       <Banner/>
-      <Products/>
+     <Products/>
 
     </>
   );

@@ -1,4 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
+//import {Container} from "bootstrap"
 
 const DataContext = createContext();
 
@@ -15,10 +16,9 @@ useEffect(()=>{
   fetchData();
 }, []);
 
-return <DataContext.Provider value={data}>{children}</DataContext.Provider>;
+return <DataContext.Provider value={data}>
+  <container>{children}</container>
+  </DataContext.Provider>;
 };
-
-
-
 
 export { DataContext, DataProvider };
