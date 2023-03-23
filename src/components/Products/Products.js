@@ -21,7 +21,7 @@ const Product = () => {
               <h2 className="card-title">{product.title}</h2>
               <p className="card-text">{product.description}</p>
               <button
-                className="btn btn-lg btn-block btn-primary"
+                className="btn btn-primary btn-sm"
                 onClick={() => abrirProducto(product.id)}
               >
                 ABRIR PRODUCTO
